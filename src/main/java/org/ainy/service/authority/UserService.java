@@ -22,7 +22,7 @@ public class UserService {
         this.userMapper = userMapper;
     }
 
-    public User selectByPrimaryKey(Object o) {
+    public User selectByPrimaryKey(Object o) throws Exception {
 
         return userMapper.selectByPrimaryKey(o);
     }

@@ -29,9 +29,14 @@ public class UserController {
     @GetMapping(value = "/getUserInfo/{uid}")
     public ResponseData getUserInfo(@PathVariable("uid") String uid) {
 
-        User user = new User();
-        user.setUid(Long.valueOf(uid));
-        return new ResponseData<>(userService.selectByPrimaryKey(user));
+        try {
+            User user = new User();
+            user.setUid(Long.valueOf(uid));
+            return new ResponseData<>(userService.selectByPrimaryKey(user));
+        } catch (Exception e) {
+            log.error("[系统错误]", e);
+            return new ResponseData(ErrorConstant.SYSTEM_ERROR.getCode(), ErrorConstant.SYSTEM_ERROR.getDesc());
+        }
     }
 
     @ResponseBody
@@ -39,6 +44,7 @@ public class UserController {
     public ResponseData createUser(@RequestBody User user) {
 
         try {
+
             return new ResponseData<>(userService.insert(user));
         } catch (Exception e) {
             log.error("[系统错误]", e);

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 /**
@@ -16,10 +17,13 @@ import java.time.LocalDateTime;
 public class User {
 
     private Long uid;
+    @NotEmpty(message = "登录id不能为空")
     private String userId;
+    @NotEmpty(message = "用户名不能为空")
     private String userName;
     private String salt;
     private String hashValue;
+    @NotEmpty(message = "角色类型不能为空")
     private String roleId;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime createTime;
