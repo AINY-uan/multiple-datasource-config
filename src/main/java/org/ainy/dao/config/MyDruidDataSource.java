@@ -43,7 +43,7 @@ public class MyDruidDataSource extends DruidDataSource {
     @Override
     public void setPassword(String password) {
         try {
-            String dbrasPath = "E:/";
+            String dbrasPath = "E:/Workspace";
             String publicKey = RsaUtil.loadPublicKeyByFile(dbrasPath);
             password = ConfigTools.decrypt(publicKey, password);
         } catch (Exception e) {
