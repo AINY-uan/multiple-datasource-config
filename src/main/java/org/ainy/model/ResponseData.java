@@ -3,9 +3,9 @@ package org.ainy.model;
 import lombok.Data;
 
 /**
- * @Author 阿拉丁省油的灯
- * @Date 2019-11-06 22:40
- * @Description 响应数据Model
+ * @author 阿拉丁省油的灯
+ * @date 2019-11-06 22:40
+ * @description 响应数据Model
  */
 @Data
 public class ResponseData<T> {

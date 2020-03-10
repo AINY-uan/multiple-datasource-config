@@ -1,14 +1,19 @@
 package org.ainy.constant;
 
 /**
- * @Author 阿拉丁省油的灯
- * @Date 2019-11-09 21:46
- * @Description 错误码枚举类
+ * @author 阿拉丁省油的灯
+ * @date 2019-11-09 21:46
+ * @description 错误码枚举类
  */
 public enum ErrorConstant {
 
+    /**
+     * 成功
+     */
     SYSTEM_SUCCESS(200, "成功"),
-
+    /**
+     * 系统错误
+     */
     SYSTEM_ERROR(500, "系统错误"),
 
     ;
